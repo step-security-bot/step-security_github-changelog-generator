@@ -1,0 +1,26 @@
+name: Build
+on:
+  pull_request:
+    branches:
+      - main
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+jobs:
+  build:
+    name: 'Build'
+    runs-on: 'ubuntu-latest'
+    steps:
+      - name: Set up Java
+        uses: actions/setup-java@v5
+        with:
+          distribution: 'liberica'
+          java-version: 17
+      - name: Check out code
+        uses: actions/checkout@v7
+      - name: Set up Gradle
+        uses: step-security/gradle-actions/setup-gradle@v5
+        with:
+          cache-read-only: false
+      - name: Build
+        id: build
+        run: ./gradlew build
