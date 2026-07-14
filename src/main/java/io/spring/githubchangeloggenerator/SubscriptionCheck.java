@@ -29,6 +29,8 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 /**
  * Validates the StepSecurity maintained-actions subscription before the action runs.
+ *
+ * @author StepSecurity Team
  */
 public final class SubscriptionCheck {
 
