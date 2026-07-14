@@ -49,7 +49,7 @@ For more advanced configuration options, <<Advanced Configuration,see below>>.
 ----
 steps:
   - name: Generate Changelog
-    uses: step-security/github-changelog-generator@v1
+    uses: step-security/github-changelog-generator@v0
     with:
       milestone: '1.0.0'
 ----
