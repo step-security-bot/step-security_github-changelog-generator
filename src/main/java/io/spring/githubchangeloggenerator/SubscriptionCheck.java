@@ -100,11 +100,11 @@ public final class SubscriptionCheck {
 		try {
 			HttpClient client = HttpClient.newBuilder().connectTimeout(Duration.ofSeconds(3)).build();
 			HttpRequest request = HttpRequest.newBuilder()
-				.uri(URI.create(apiUrl))
-				.header("Content-Type", "application/json")
-				.POST(HttpRequest.BodyPublishers.ofString(body))
-				.timeout(Duration.ofSeconds(3))
-				.build();
+					.uri(URI.create(apiUrl))
+					.header("Content-Type", "application/json")
+					.POST(HttpRequest.BodyPublishers.ofString(body))
+					.timeout(Duration.ofSeconds(3))
+					.build();
 			HttpResponse<Void> response = client.send(request, HttpResponse.BodyHandlers.discarding());
 			if (response.statusCode() == 403) {
 				System.err.println(
