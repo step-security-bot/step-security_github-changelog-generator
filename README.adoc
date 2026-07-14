@@ -1,4 +1,4 @@
-[![StepSecurity Maintained Action](https://raw.githubusercontent.com/step-security/maintained-actions-assets/main/assets/maintained-action-banner.png)](https://docs.stepsecurity.io/actions/stepsecurity-maintained-actions)
+image::https://raw.githubusercontent.com/step-security/maintained-actions-assets/main/assets/maintained-action-banner.png[StepSecurity Maintained Action, link="https://docs.stepsecurity.io/actions/stepsecurity-maintained-actions"]
 
 = GitHub Changelog Generator
 
