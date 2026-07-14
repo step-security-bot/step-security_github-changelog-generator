@@ -100,17 +100,16 @@ public final class SubscriptionCheck {
 		try {
 			HttpClient client = HttpClient.newBuilder().connectTimeout(Duration.ofSeconds(3)).build();
 			HttpRequest request = HttpRequest.newBuilder()
-					.uri(URI.create(apiUrl))
-					.header("Content-Type", "application/json")
-					.POST(HttpRequest.BodyPublishers.ofString(body))
-					.timeout(Duration.ofSeconds(3))
-					.build();
+				.uri(URI.create(apiUrl))
+				.header("Content-Type", "application/json")
+				.POST(HttpRequest.BodyPublishers.ofString(body))
+				.timeout(Duration.ofSeconds(3))
+				.build();
 			HttpResponse<Void> response = client.send(request, HttpResponse.BodyHandlers.discarding());
 			if (response.statusCode() == 403) {
 				System.err.println(
 						"::error::\u001b[1;31mThis action requires a StepSecurity subscription for private repositories.\u001b[0m");
-				System.err.println(
-						"::error::\u001b[31mLearn how to enable a subscription: " + DOCS_URL + "\u001b[0m");
+				System.err.println("::error::\u001b[31mLearn how to enable a subscription: " + DOCS_URL + "\u001b[0m");
 				System.exit(1);
 			}
 		}
