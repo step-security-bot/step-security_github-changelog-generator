@@ -1,1 +1,0 @@
-# github-changelog-generator
